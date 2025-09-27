@@ -2,11 +2,14 @@ import React from 'react';
 import Ticket from '../Ticket/Ticket';
 import { toast } from 'react-toastify';
 
-const TaskStatus = ({ count, handleResolvedCard}) => {
+const TaskStatus = ({ count, handleResolvedCard, handleRemoveProgress}) => {
+    const {id} = count;
     // console.log(count)
     const handleTaskBtn = () =>{
         toast('Task Completed');
         handleResolvedCard(count)
+        handleRemoveProgress(id)
+
     }
 
     return (

@@ -6,9 +6,7 @@ import TaskStatus from '../TaskStatus/TaskStatus';
 import ResolvedTask from './ResolvedTask/ResolvedTask';
 
 
-const CustomerTickets = ({ fetchPromise, handleStatusCard, handleTaskCard, countProgress, handleResolvedCard, resolvedCount }) => {
-
-
+const CustomerTickets = ({ fetchPromise, handleStatusCard, handleTaskCard, countProgress, handleResolvedCard, resolvedCount, handleRemoveProgress}) => {
 
     const tickets = use(fetchPromise);
 
@@ -36,7 +34,7 @@ const CustomerTickets = ({ fetchPromise, handleStatusCard, handleTaskCard, count
                     <h2 className='text-2xl font-semibold p-3'>Task Status</h2>
                     <div>
                         {
-                            countProgress.map(count => <TaskStatus key={count.id} count={count} handleResolvedCard={handleResolvedCard}
+                            countProgress.map(count => <TaskStatus key={count.id} count={count} handleResolvedCard={handleResolvedCard} handleRemoveProgress={handleRemoveProgress}
                             ></TaskStatus>)
                         }
                     </div> 

@@ -38,16 +38,21 @@ function App() {
     console.log(newResolvedCount)
   }
 
-
+  const handleRemoveProgress = id =>{
+    const remainingProgress = countProgress.filter(ticket=> ticket.id !== id);
+    setCountProgress(remainingProgress)
+  }
   return (
     <>
       <Navbar></Navbar>
 
-      <StatusCard countProgress={countProgress} resolvedCount={resolvedCount}></StatusCard>
+      <StatusCard 
+      countProgress={countProgress} resolvedCount={resolvedCount}></StatusCard>
 
       <Suspense fallback={<h2>Tickets are loading...</h2>}>
         <CustomerTickets handleTaskCard={handleTaskCard} countProgress={countProgress} handleStatusCard={handleStatusCard}
         handleResolvedCard={handleResolvedCard} resolvedCount={resolvedCount}
+        handleRemoveProgress={handleRemoveProgress}setCountProgress={setCountProgress}
          fetchPromise={fetchPromise}></CustomerTickets>
       </Suspense>
 

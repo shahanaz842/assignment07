@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 
 const Ticket = ({ticket, handleStatusCard, handleTaskCard}) => {
     // console.log(ticket)
+    
     const handleTicket =()=>{
         
         handleStatusCard(ticket)
