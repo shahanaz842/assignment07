@@ -1,0 +1,9 @@
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+.status-card{
+    @apply text-white rounded flex flex-col
+     justify-center items-center h-[170px]
+}
